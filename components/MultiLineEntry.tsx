@@ -10,7 +10,7 @@ type Props = {
 
 export default function MultiLineEntry({
   placeholder,
-  size = 12,
+  size = 14,
   margin = 2,
   height = 120,
 }: Props) {

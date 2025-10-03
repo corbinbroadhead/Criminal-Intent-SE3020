@@ -22,8 +22,8 @@ const themes = {
     text: "#cfd4d9ff",
   },
   rootbeer: {
-    primary: "#8d7e47ff",
-    secondary: "#2f2205ff",
+    primary: "#7b714cff",
+    secondary: "#1f1603ff",
     text: "#cfd4d9ff",
   },
   creamsicle: {
