@@ -5,12 +5,16 @@ type Props = {
   placeholder: string;
   size?: number;
   margin?: number;
+  value?: string;
+  onChangeText?: (text: string) => void;
 };
 
 export default function SingleLineEntry({
   placeholder,
   size = 16,
   margin = 2,
+  value,
+  onChangeText,
 }: Props) {
   const { colors } = useTheme();
 
@@ -29,6 +33,9 @@ export default function SingleLineEntry({
         borderRadius: 6,
         width: "90%",
       }}
+      value={value}
+      onChangeText={onChangeText}
     />
   );
 }
+

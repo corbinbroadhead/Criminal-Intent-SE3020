@@ -6,6 +6,8 @@ type Props = {
   size?: number;
   margin?: number;
   height?: number;
+  value?: string;
+  onChangeText?: (text: string) => void;
 };
 
 export default function MultiLineEntry({
@@ -13,6 +15,8 @@ export default function MultiLineEntry({
   size = 14,
   margin = 2,
   height = 120,
+  value,
+  onChangeText,
 }: Props) {
   const { colors } = useTheme();
 
@@ -33,15 +37,18 @@ export default function MultiLineEntry({
             backgroundColor: colors.secondary,
             borderRadius: 6,
             textAlignVertical: "top",
-            height, // ✅ uses prop, no flex expansion
+            height,
             width: "90%",
             alignSelf: "center",
           }}
+          value={value}
+          onChangeText={onChangeText}
         />
       </View>
     </TouchableWithoutFeedback>
   );
 }
+
 
 const styles = StyleSheet.create({
   wrapper: {

@@ -1,25 +1,18 @@
 import { useTheme } from "@/contexts/ThemeContext";
-import { useState } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 
 type Props = {
   text: string;
+  checked: boolean;
   onClick: (checked: boolean) => void;
 };
 
-export default function Checkbox({ text, onClick }: Props) {
+export default function Checkbox({ text, checked, onClick }: Props) {
   const { colors } = useTheme();
-  const [checked, setChecked] = useState(false);
-
-  const toggle = () => {
-    const newVal = !checked;
-    setChecked(newVal);
-    onClick(newVal);
-  };
 
   return (
     <TouchableOpacity
-      onPress={toggle}
+      onPress={() => onClick(!checked)}
       style={{
         flexDirection: "row",
         alignItems: "center",
